@@ -34,10 +34,12 @@ nav ul {
 nav a {
     color: #fff;
     text-decoration: none;
+
+    transition: opacity 0.3s ease;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    opacity: 0.7;
 }
 
 /* Hero Section */
@@ -140,6 +142,14 @@ body.dark .project-card {
 #theme-toggle {
   padding: 6px 12px;
   cursor: pointer;
+  border: none;
+  border-radius: 4px;
+
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.05);
 }
 
 /* Project List Styles */
@@ -153,7 +163,13 @@ body.dark .project-card {
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    transition: transform 0.3s, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .project-card h3 {
@@ -165,4 +181,10 @@ body.dark .project-card {
     margin-top: 10px;
     text-decoration: none;
     font-weight: bold;
+
+    transition: color 0.3s ease;
+}
+
+.project-card a:hover {
+    color: #007BFF;
 }
