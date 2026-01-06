@@ -19,3 +19,27 @@ toggleBtn.addEventListener("click", () => {
     localStorage.setItem("theme", "light");
   }
 });
+
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+    const windowHeight = window.innerHeight;
+    const revealPoint = 100;
+
+    reveals.forEach((el) => {
+        const revealTop = el.getBoundingClientRect().top;
+
+        if (revealTop < windowHeight - revealPoint) {
+            el.classList.add("active");
+        } 
+    });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+    header.classList.toggle("scrolled", window.scrollY > 20);
+});
