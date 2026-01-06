@@ -89,5 +89,26 @@ footer {
 
     section {
         padding: 40px 15px;
+    }   
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #eaeaea;
+    }
+
+    header {
+        background-color: #1e1e1e;
+    }
+
+    nav a {
+        color: #eaeaea;
+    }
+
+    footer {
+        background-color: #1e1e1e;
+        color: #aaa;
     }
 }
