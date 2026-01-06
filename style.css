@@ -94,27 +94,6 @@ footer {
     }   
 }
 
-/* Dark Mode Styles */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #121212;
-        color: #eaeaea;
-    }
-
-    header {
-        background-color: #1e1e1e;
-    }
-
-    nav a {
-        color: #eaeaea;
-    }
-
-    footer {
-        background-color: #1e1e1e;
-        color: #aaa;
-    }
-}
-
 /* Theme Toggle Button */
 body.dark {
   background-color: #121212;
@@ -129,14 +108,18 @@ body.dark nav a {
   color: #eaeaea;
 }
 
-body.dark footer {
-  background-color: #1e1e1e;
-  color: #aaa;
+body.dark section {
+  background-color: #121212;
 }
 
 body.dark .project-card {
   background-color: #1e1e1e;
   box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+body.dark footer {
+  background-color: #1e1e1e;
+  color: #aaa;
 }
 
 #theme-toggle {
