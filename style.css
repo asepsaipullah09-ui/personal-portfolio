@@ -1,3 +1,13 @@
+:root {
+    --primary: #2563eb;
+    --bg-light: #ffffff;
+    --bg-dark: #121212;
+}
+
+a {
+    color: var(--primary);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -43,6 +53,29 @@ nav a:hover {
 }
 
 /* Hero Section */
+.hero-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn.primary {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.btn.outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
 #hero {
     max-width: 1100px;
     margin: auto;
@@ -54,6 +87,20 @@ nav a:hover {
     margin-bottom: 10px;
 }
 
+/* Skills Section */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills-list li {
+    background-color: #eee;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
 /* Section Styles */
 section {
     max-width: 1100px;
@@ -63,6 +110,12 @@ section {
 
 section h2 {
     margin-bottom: 10px;
+}
+
+/* Project Section */
+.tech {
+    font-size: 0.85rem;
+    color: #666;
 }
 
 /* Footer Styles */
@@ -169,5 +222,5 @@ body.dark footer {
 }
 
 .project-card a:hover {
-    color: #007BFF;
+    color: #1d4ed8;
 }
