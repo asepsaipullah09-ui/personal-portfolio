@@ -72,6 +72,27 @@ nav a:hover {
     opacity: 0.7;
 }
 
+/* Nav Brand */
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+
+    transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.1);
+}
+
 /* Theme Toggle */
 #theme-toggle {
     padding: 6px 12px;
