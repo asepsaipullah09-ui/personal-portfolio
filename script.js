@@ -1,45 +1,44 @@
-const toggleBtn = document.getElementById("theme-toggle");
-const body = document.body;
+document.addEventListener("DOMContentLoaded", () => {
+  const body = document.body;
+  const toggleBtn = document.getElementById("theme-toggle");
+  const header = document.querySelector("header");
+  const reveals = document.querySelectorAll(".reveal");
 
-// cek tema tersimpan
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme === "dark") {
-  body.classList.add("dark");
-  toggleBtn.textContent = "Light";
-}
+  /* =====================
+     THEME TOGGLE
+  ====================== */
+  const savedTheme = localStorage.getItem("theme");
 
-toggleBtn.addEventListener("click", () => {
-  body.classList.toggle("dark");
-
-  if (body.classList.contains("dark")) {
+  if (savedTheme === "dark") {
+    body.classList.add("dark");
     toggleBtn.textContent = "Light";
-    localStorage.setItem("theme", "dark");
-  } else {
-    toggleBtn.textContent = "Dark";
-    localStorage.setItem("theme", "light");
   }
-});
 
-const reveals = document.querySelectorAll(".reveal");
+  toggleBtn.addEventListener("click", () => {
+    const isDark = body.classList.toggle("dark");
+    toggleBtn.textContent = isDark ? "Light" : "Dark";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  });
 
-function revealOnScroll() {
+  /* =====================
+     SCROLL HANDLER
+  ====================== */
+  function handleScroll() {
     const windowHeight = window.innerHeight;
     const revealPoint = 100;
 
+    // Reveal animation
     reveals.forEach((el) => {
-        const revealTop = el.getBoundingClientRect().top;
-
-        if (revealTop < windowHeight - revealPoint) {
-            el.classList.add("active");
-        } 
+      const revealTop = el.getBoundingClientRect().top;
+      if (revealTop < windowHeight - revealPoint) {
+        el.classList.add("active");
+      }
     });
-}
 
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
-
-const header = document.querySelector("header");
-
-window.addEventListener("scroll", () => {
+    // Header shadow
     header.classList.toggle("scrolled", window.scrollY > 20);
+  }
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
 });
